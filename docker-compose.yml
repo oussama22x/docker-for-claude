@@ -1,0 +1,12 @@
+services:
+  claude-dev:
+    build: .
+    container_name: claude-dev
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/workspace
+      - ~/.claude:/root/.claude
+      - ~/.ssh:/root/.ssh:ro
+    env_file:
+      - .env
