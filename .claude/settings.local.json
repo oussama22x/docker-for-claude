@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -iE \"\\(eyJ[A-Za-z0-9_-]{20,}\\\\.[A-Za-z0-9_-]{20,}\\\\.[A-Za-z0-9_-]{20,}|sb_secret_[a-zA-Z0-9]{20,}|sk_live_[a-zA-Z0-9]{20,}|rk_live_[a-zA-Z0-9]{20,}|whsec_[a-zA-Z0-9]{20,}|SG\\\\.[a-zA-Z0-9_-]{20,}|x-api-key['\\\\\":]\\\\s*['\\\\\"][a-zA-Z0-9_-]{20,}|supabase_service_role_key['\\\\\":]\\\\s*['\\\\\"][a-zA-Z0-9_-]{20,}\\)\")",
+      "Bash(grep -rn \"EXECUTE format\\\\|EXECUTE '.*' || \\\\|EXECUTE concat\\\\|EXECUTE.*\\\\$1\\\\|EXECUTE.*\\\\$[0-9]\" /workspace/vetted/supabase/migrations/ --include=\"*.sql\")",
+      "Bash(./scripts/security-probe-ai-pipeline.sh *)",
+      "Bash(chmod +x /workspace/vetted/scripts/probe-fn-parse-jd.sh)",
+      "Bash(./scripts/probe-fn-parse-jd.sh)"
+    ]
+  }
+}
